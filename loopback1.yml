@@ -1,0 +1,16 @@
+---
+- name: LOOPBACK
+  hosts: router
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: Create LOOPBACK
+      ios_command:
+        commands:
+          - configure terminal
+          - int lo 1
+          - ip add 1.1.1.1 255.255.255.0
+          - no shut
+      vars:
+        ansible_network_os: ios
