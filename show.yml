@@ -1,0 +1,13 @@
+---
+- name: CONFIGS
+  hosts: router
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: Show Run
+      ios_command:
+        commands:
+          - show ip int br
+      vars:
+        ansible_network_os: ios
