@@ -9,8 +9,8 @@
       ios_command:
         commands:
           - configure terminal
-          - int lo 1
-          - ip add 1.1.1.1 255.255.255.0
+          - int lo 2
+          - ip add 2.2.2.2 255.255.255.0
           - no shut
       vars:
         ansible_network_os: ios
